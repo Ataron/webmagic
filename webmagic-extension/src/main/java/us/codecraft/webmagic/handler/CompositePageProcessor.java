@@ -14,7 +14,7 @@ public class CompositePageProcessor implements PageProcessor {
 
     private Site site;
 
-    private List<SubPageProcessor> subPageProcessors = new ArrayList<SubPageProcessor>();
+    private List<SubPageProcessor> subPageProcessors = new ArrayList<>();
 
     public CompositePageProcessor(Site site) {
         this.site = site;
@@ -43,7 +43,7 @@ public class CompositePageProcessor implements PageProcessor {
     }
 
     public CompositePageProcessor setSubPageProcessors(SubPageProcessor... subPageProcessors) {
-        this.subPageProcessors = new ArrayList<SubPageProcessor>();
+        this.subPageProcessors = new ArrayList<>();
         for (SubPageProcessor subPageProcessor : subPageProcessors) {
             this.subPageProcessors.add(subPageProcessor);
         }

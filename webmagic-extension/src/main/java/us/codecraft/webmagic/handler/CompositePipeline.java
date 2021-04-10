@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class CompositePipeline implements Pipeline {
 
-    private List<SubPipeline> subPipelines = new ArrayList<SubPipeline>();
+    private List<SubPipeline> subPipelines = new ArrayList<>();
 
     @Override
     public void process(ResultItems resultItems, Task task) {
@@ -32,7 +32,7 @@ public class CompositePipeline implements Pipeline {
     }
 
     public CompositePipeline setSubPipeline(SubPipeline... subPipelines) {
-        this.subPipelines = new ArrayList<SubPipeline>();
+        this.subPipelines = new ArrayList<>();
         for (SubPipeline subPipeline : subPipelines) {
             this.subPipelines.add(subPipeline);
         }

@@ -11,7 +11,7 @@ import java.util.Set;
 public abstract class ClassUtils {
 
     public static Set<Field> getFieldsIncludeSuperClass(Class clazz) {
-        Set<Field> fields = new LinkedHashSet<Field>();
+        Set<Field> fields = new LinkedHashSet<>();
         Class current = clazz;
         while (current != null) {
             Field[] currentFields = current.getDeclaredFields();
