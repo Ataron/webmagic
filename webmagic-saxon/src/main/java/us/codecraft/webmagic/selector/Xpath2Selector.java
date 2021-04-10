@@ -85,7 +85,7 @@ public class Xpath2Selector implements Selector {
         @Override
         public String getPrefix(String namespaceURI) {
             List<String> prefixes = namespace2PrefixMap.get(namespaceURI);
-            if (prefixes == null || prefixes.size() < 1) {
+            if (prefixes == null || prefixes.isEmpty()) {
                 return null;
             }
             return prefixes.get(0);
@@ -94,7 +94,7 @@ public class Xpath2Selector implements Selector {
         @Override
         public Iterator getPrefixes(String namespaceURI) {
             List<String> prefixes = namespace2PrefixMap.get(namespaceURI);
-            if (prefixes == null || prefixes.size() < 1) {
+            if (prefixes == null || prefixes.isEmpty()) {
                 return null;
             }
             return prefixes.iterator();

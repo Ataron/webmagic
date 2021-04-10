@@ -101,7 +101,7 @@ public class ScriptConsole {
 
             }
         });
-        if (params.getUrls() == null || params.getUrls().size() == 0) {
+        if (params.getUrls() == null || params.getUrls().isEmpty()) {
             System.err.println("Need at least one argument");
             System.out.println("Usage: java -jar webmagic.jar [-l language] -f script file [-t threadnum] [-s sleep time] url1 [url2 url3]");
             System.exit(-1);
