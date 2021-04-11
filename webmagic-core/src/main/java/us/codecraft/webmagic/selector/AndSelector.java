@@ -48,7 +48,7 @@ public class AndSelector implements Selector {
                     resultsTemp.addAll(selector.selectList(result));
                 }
                 results = resultsTemp;
-                if (results == null || results.isEmpty()) {
+                if (results.size() == 0) {
                     return results;
                 }
             }

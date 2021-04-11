@@ -30,12 +30,10 @@ public class ProxyUtils {
 			logger.warn("FAILRE - CAN not connect!  remote: " + p);
 			return false;
 		} finally {
-			if (socket != null) {
-				try {
-					socket.close();
-				} catch (IOException e) {
-					logger.warn("Error occurred while closing socket of validating proxy", e);
-				}
+			try {
+				socket.close();
+			} catch (IOException e) {
+				logger.warn("Error occurred while closing socket of validating proxy", e);
 			}
 		}
 
