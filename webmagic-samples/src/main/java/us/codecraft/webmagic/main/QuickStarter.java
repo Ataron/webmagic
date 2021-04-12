@@ -11,6 +11,8 @@ import us.codecraft.webmagic.pipeline.MultiPagePipeline;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author code4crafter@gmail.com <br>
@@ -36,7 +38,7 @@ public class QuickStarter {
         init();
         String key = null;
         key = readKey(key);
-        System.out.println("The demo started and will last 20 seconds...");
+        Logger.getGlobal().info("The demo started and will last 20 seconds...");
         //Start spider
         OOSpider.create(Site.me(), clazzMap.get(key)).addUrl(urlMap.get(key)).addPipeline(new MultiPagePipeline()).addPipeline(new ConsolePipeline()).runAsync();
 
@@ -45,21 +47,21 @@ public class QuickStarter {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("The demo stopped!");
-        System.out.println("To more usage, try to customize your own Spider!");
+        Logger.getGlobal().info("The demo stopped!");
+        Logger.getGlobal().info("To more usage, try to customize your own Spider!");
         System.exit(0);
     }
 
     private static String readKey(String key) {
         Scanner stdin = new Scanner(System.in);
-        System.out.println("Choose a Spider demo:");
+        Logger.getGlobal().info("Choose a Spider demo:");
         for (Map.Entry<String, Class> classEntry : clazzMap.entrySet()) {
-            System.out.println(classEntry.getKey()+"\t" + classEntry.getValue() + "\t" + urlMap.get(classEntry.getKey()));
+            Logger.getGlobal().info(classEntry.getKey()+"\t" + classEntry.getValue() + "\t" + urlMap.get(classEntry.getKey()));
         }
         while (key == null) {
             key = stdin.nextLine();
             if (clazzMap.get(key) == null) {
-                System.out.println("Invalid choice!");
+                Logger.getGlobal().warning("Invalid choice!");
                 key = null;
             }
         }
