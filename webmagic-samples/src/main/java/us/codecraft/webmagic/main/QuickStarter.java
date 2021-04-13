@@ -11,7 +11,6 @@ import us.codecraft.webmagic.pipeline.MultiPagePipeline;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**

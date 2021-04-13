@@ -46,10 +46,6 @@ public class ScriptConsole {
             return language;
         }
 
-        private void setLanguage(Language language) {
-            this.language = language;
-        }
-
         private String getScriptFileName() {
             return scriptFileName;
         }
